@@ -25,12 +25,13 @@ RUN apt-get install -y binutils-gold
 RUN apt-get install -y bash-completion curl emacs git man-db python-dev vim 
 
 # python pip install
-RUN apt-get install -y python-setuptools
+RUN apt-get install -y python-setuptools 
 RUN curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
 RUN python get-pip.py
 
 RUN pip install mercurial
 
+RUN apt-get install -y python-software-properties
 # gstreamer
 RUN add-apt-repository ppa:gstreamer-developers/ppa
 RUN apt-get update
