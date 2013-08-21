@@ -25,17 +25,15 @@ RUN apt-get install -y binutils-gold
 RUN apt-get install -y bash-completion curl emacs git man-db python-dev vim 
 
 # python pip install
-RUN apt-get install -y python-setuptools 
-RUN curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
-RUN python get-pip.py
+RUN apt-get install -y python-setuptools software-properties-common
+RUN curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py && python get-pip.py
 
 RUN pip install mercurial
 
-RUN apt-get install -y python-software-properties
 # gstreamer
 RUN add-apt-repository ppa:gstreamer-developers/ppa
 RUN apt-get update
-RUN apt-get install libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
+RUN apt-get install -y libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
 
 # Create a user for development.
 RUN useradd -m firefox
