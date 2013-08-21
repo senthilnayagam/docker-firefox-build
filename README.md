@@ -16,10 +16,13 @@ sudo docker build -t firefox github.com/senthilnayagam/docker-firefox-build
 sudo docker run -i -t firefox /bin/bash
 
 $ su - firefox
-$ cd mozilla-central
+
 
 # first time only
 $ hg clone https://hg.mozilla.org/mozilla-central
+
+
+$ cd mozilla-central
 
 # subsequent times 
 $ hg pull --update
